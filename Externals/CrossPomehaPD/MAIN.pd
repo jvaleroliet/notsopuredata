@@ -1,0 +1,29 @@
+#N struct 1462-pad float x float y float lx float ly float cx float
+cy float rx float ry float ex float ey;
+#N struct 1463-pad float x float y float lx float ly float cx float
+cy float rx float ry float ex float ey;
+#N struct 1464-pad float x float y float lx float ly float cx float
+cy float rx float ry float ex float ey;
+#N struct 1537-pad float x float y float lx float ly float cx float
+cy float rx float ry float ex float ey;
+#N struct 1538-pad float x float y float lx float ly float cx float
+cy float rx float ry float ex float ey;
+#N struct 1539-pad float x float y float lx float ly float cx float
+cy float rx float ry float ex float ey;
+#N struct 1540-pad float x float y float lx float ly float cx float
+cy float rx float ry float ex float ey;
+#N struct 1541-pad float x float y float lx float ly float cx float
+cy float rx float ry float ex float ey;
+#N struct 1542-pad float x float y float lx float ly float cx float
+cy float rx float ry float ex float ey;
+#N struct 1543-pad float x float y float lx float ly float cx float
+cy float rx float ry float ex float ey;
+#N struct 1544-pad float x float y float lx float ly float cx float
+cy float rx float ry float ex float ey;
+#N struct 1545-pad float x float y float lx float ly float cx float
+cy float rx float ry float ex float ey;
+#N canvas -8 -8 1366 725 12;
+#X obj 544 690 dac~;
+#X obj 543 24 cross_pomeha;
+#X connect 1 0 0 0;
+#X connect 1 0 0 1;

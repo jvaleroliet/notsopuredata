@@ -1,0 +1,6 @@
+[submodule "Externals/PD-components"]
+	path = Externals/PD-components
+	url = https://github.com/devstermarts/PD-components.git
+[submodule "Externals/pd-mkmr"]
+	path = Externals/pd-mkmr
+	url = https://github.com/MikeMorenoDSP/pd-mkmr.git

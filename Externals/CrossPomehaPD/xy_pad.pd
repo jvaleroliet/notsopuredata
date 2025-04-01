@@ -1,0 +1,160 @@
+#N struct 1318-pad float x float y float lx float ly float cx float
+cy float rx float ry float ex float ey;
+#N canvas -8 -8 1366 725 10;
+#X obj 129 183 f \$0;
+#X obj 129 204 t b f f;
+#X msg 129 134 bang;
+#X obj 348 282 pointer;
+#X msg 347 221 \; pd-\$1-pad-area clear;
+#X obj 129 157 t b b;
+#X obj 129 109 loadbang;
+#X symbolatom 515 194 10 0 0 0 - - -;
+#X floatatom 649 236 5 0 0 0 - - -;
+#X floatatom 742 236 5 0 0 0 - - -;
+#X obj 615 152 unpack s p f;
+#X obj 623 390 outlet;
+#X obj 759 388 outlet;
+#X obj 134 355 cnv 15 294 294 empty empty empty 20 12 0 14 -96896 -66577
+0;
+#N canvas 286 51 909 744 \$0-pad-area 0;
+#X scalar 1318-pad 0 0 57.2 -38.2 61.2 -34.2 65.2 -30.2 0 0 \;;
+#X coords -110 109 109 -110 48 48 2 0 0;
+#X restore 2 1 pd \$0-pad-area;
+#X msg 129 284 0 0 0 0 -20 -20 20 20 0 0;
+#X obj 649 178 t p p p p;
+#X msg 348 258 traverse pd-\$1-pad-area \, bang;
+#X obj 382 329 s \$0-gp;
+#X obj 555 228 route click;
+#X obj 555 259 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 690 389 outlet;
+#X obj 616 111 struct \$0-pad float x float y float lx float ly float
+cx float cy float rx float ry float ex float ey;
+#X obj 649 209 get \$0-pad cx cy;
+#X obj 649 318 set \$0-pad lx ly;
+#X obj 763 319 set \$0-pad rx ry;
+#X obj 128 311 append \$0-pad x y cx cy lx ly rx ry ex ey;
+#X text 561 507 constrain to the bounds of -100 and 100;
+#X obj 562 479 filledpolygon 930 930 1 cx(-100:100) cy(-100:100) lx
+ly rx ly rx ry lx ry lx ly;
+#X obj 562 444 filledcurve 99 99 1 cx(-100:100) cy(-100:100) lx ly
+rx ly rx ry lx ry lx ly;
+#X obj 474 359 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 491 392 == 0;
+#X obj 474 421 != 0;
+#X obj 474 331 loadbang;
+#X obj 475 511 tgl 15 0 empty empty crosshairs 17 7 0 10 -262144 -1
+-1 0 1;
+#X text 136 666 Balwyn 04/2017;
+#X text 191 100 x/y is irrelevant so remains 0/0 \; cx/cy is the centre
+of the cursor and is an offset of x/y that produces the output during
+the 'change' event of the struct (the right side of an invisible rectangle
+x \, y-cx \, cy) lx/ly and rx/ry are for the size of the cursor \;
+ex/ey is not required here;
+#X text 475 596 Notes: I have found that drawing the cursor from the
+centre then out to a corner of the perimeter of the cursor and then
+all the way around the perimeterachieves the best mouse response from
+the scalar \; Using only a click and change event is enough to create
+mouse output;
+#X text 669 370 bang on click;
+#X obj 563 526 drawpolygon 0 0 -108 cy 108 cy;
+#X obj 563 546 drawpolygon 0 0 cx -108 cx 108;
+#X obj 649 290 - 20;
+#X obj 695 291 - 20;
+#X obj 763 291 + 20;
+#X obj 809 291 + 20;
+#X msg 295 174 set 0 0 0 0 -20 -20 20 20 0 0;
+#X obj 957 310 + 100;
+#X obj 957 352 / 100;
+#X obj 1030 308 + 100;
+#X obj 1030 350 / 100;
+#X obj 957 331 * 0.5;
+#X obj 1030 329 * 0.5;
+#X floatatom 1209 263 5 -100 100 0 - - -;
+#X floatatom 1102 191 5 -100 100 0 - - -;
+#X obj 1102 67 inlet;
+#X obj 1208 67 inlet;
+#X obj 1294 338 r \$0-gp;
+#X obj 1119 367 set \$0-pad cx cy lx ly rx ry;
+#X obj 1209 286 t b f f f;
+#X obj 1102 214 t b f f f;
+#X obj 1102 88 * 200;
+#X obj 1102 109 - 100;
+#X obj 1218 96 * 200;
+#X obj 1218 117 - 100;
+#X obj 1165 339 - 20;
+#X obj 1197 339 - 20;
+#X obj 1229 339 + 20;
+#X obj 1260 339 + 20;
+#X connect 0 0 1 0;
+#X connect 1 0 15 0;
+#X connect 1 1 17 0;
+#X connect 1 2 4 0;
+#X connect 2 0 5 0;
+#X connect 3 0 26 10;
+#X connect 5 0 0 0;
+#X connect 5 1 45 0;
+#X connect 6 0 2 0;
+#X connect 8 0 41 0;
+#X connect 8 0 43 0;
+#X connect 8 0 46 0;
+#X connect 9 0 42 0;
+#X connect 9 0 44 0;
+#X connect 9 0 48 0;
+#X connect 10 0 7 0;
+#X connect 10 1 16 0;
+#X connect 15 0 26 0;
+#X connect 16 0 23 0;
+#X connect 16 1 24 2;
+#X connect 16 2 25 2;
+#X connect 17 0 3 0;
+#X connect 19 0 20 0;
+#X connect 20 0 21 0;
+#X connect 22 0 10 0;
+#X connect 22 0 19 0;
+#X connect 23 0 8 0;
+#X connect 23 1 9 0;
+#X connect 26 0 18 0;
+#X connect 30 0 31 0;
+#X connect 30 0 32 0;
+#X connect 31 0 29 0;
+#X connect 32 0 28 0;
+#X connect 33 0 30 0;
+#X connect 34 0 39 0;
+#X connect 34 0 40 0;
+#X connect 41 0 24 0;
+#X connect 42 0 24 1;
+#X connect 43 0 25 0;
+#X connect 44 0 25 1;
+#X connect 45 0 15 0;
+#X connect 46 0 50 0;
+#X connect 47 0 11 0;
+#X connect 48 0 51 0;
+#X connect 49 0 12 0;
+#X connect 50 0 47 0;
+#X connect 51 0 49 0;
+#X connect 52 0 58 0;
+#X connect 52 0 48 0;
+#X connect 53 0 59 0;
+#X connect 53 0 46 0;
+#X connect 54 0 60 0;
+#X connect 55 0 62 0;
+#X connect 56 0 57 6;
+#X connect 58 0 57 0;
+#X connect 58 1 57 1;
+#X connect 58 2 65 0;
+#X connect 58 3 67 0;
+#X connect 59 0 52 0;
+#X connect 59 1 57 0;
+#X connect 59 2 64 0;
+#X connect 59 3 66 0;
+#X connect 60 0 61 0;
+#X connect 61 0 53 0;
+#X connect 62 0 63 0;
+#X connect 63 0 52 0;
+#X connect 64 0 57 2;
+#X connect 65 0 57 3;
+#X connect 66 0 57 4;
+#X connect 67 0 57 5;
+#X coords 0 -1 1 1 50 50 2 0 0;
