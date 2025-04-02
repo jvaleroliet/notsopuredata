@@ -4,3 +4,12 @@
 [submodule "Externals/pd-mkmr"]
 	path = Externals/pd-mkmr
 	url = https://github.com/MikeMorenoDSP/pd-mkmr.git
+[submodule "PDida"]
+	path = PDida
+	url = https://github.com/rrampoldi/PDida.git
+[submodule "PD-components"]
+	path = PD-components
+	url = https://github.com/devstermarts/PD-components.git
+[submodule "pd-mkmr"]
+	path = pd-mkmr
+	url = https://github.com/MikeMorenoDSP/pd-mkmr.git
