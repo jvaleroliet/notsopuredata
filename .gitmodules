@@ -13,3 +13,6 @@
 [submodule "pd-mkmr"]
 	path = pd-mkmr
 	url = https://github.com/MikeMorenoDSP/pd-mkmr.git
+[submodule "Externals/spico"]
+	path = Externals/spico
+	url = https://github.com/corvett21/spico.git

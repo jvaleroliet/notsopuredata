@@ -272,10 +272,10 @@
 #X obj 2278 253 < 30;
 #X obj 2138 253 < 10;
 #X obj -450 219 expr (1+$f1) * $f2;
-#N canvas 0 22 450 300 sequencer 1;
+#N canvas 0 22 450 300 sequencer 0;
 #X obj 525 187 r bpm;
 #X obj 525 239 int 1;
-#X obj 609 254 + 1;
+#X obj 607 239 + 1;
 #X floatatom 525 274 5 0 0 0 - - - 12;
 #X obj 525 332 + 1;
 #X floatatom 525 358 5 0 0 0 - - - 12;
@@ -379,7 +379,7 @@
 #X connect 51 0 4 0;
 #X restore 2595 93 pd sequencer;
 #X obj 2270 57 s bpm;
-#N canvas 0 22 450 300 kicks 1;
+#N canvas 0 22 450 300 kicks 0;
 #X obj 346 177 r NewPattern;
 #X obj 346 203 bng 25 250 50 0 empty empty empty 17 7 0 10 #e4e4e4 #4d4d4d #373737;
 #X obj 346 235 random 100;
@@ -623,7 +623,7 @@
 #X connect 120 0 92 0;
 #X restore 2595 124 pd kicks;
 #X obj 1867 321 r kick;
-#N canvas 0 22 450 300 hats 1;
+#N canvas 0 22 450 300 hats 0;
 #X obj 1099 226 r NewPattern;
 #X obj 1099 252 bng 25 250 50 0 empty empty empty 17 7 0 10 #e4e4e4 #4d4d4d #373737;
 #X obj 1099 284 random 100;
@@ -867,7 +867,7 @@
 #X connect 120 0 96 0;
 #X restore 2595 152 pd hats;
 #X obj 2052 309 r hats;
-#N canvas 0 22 450 300 snare 1;
+#N canvas 0 22 450 300 snare 0;
 #X obj 1744 619 r NewPattern;
 #X obj 1744 645 bng 25 250 50 0 empty empty empty 17 7 0 10 #e4e4e4 #4d4d4d #373737;
 #X obj 1744 677 random 100;
