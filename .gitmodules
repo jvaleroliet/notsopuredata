@@ -16,3 +16,6 @@
 [submodule "Externals/spico"]
 	path = Externals/spico
 	url = https://github.com/corvett21/spico.git
+[submodule "Externals/PDida"]
+	path = Externals/PDida
+	url = https://github.com/rrampoldi/PDida.git
